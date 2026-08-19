@@ -19,12 +19,12 @@ public class TicketDispatchService {
     }
 
     public List<SupportTicket> dispatchBatch(int maxTickets) {
-        List<SupportTicket> selected = waiting.stream()
-                .limit(maxTickets)
-                .toList();
-        waiting.removeAll(selected);
+        List<SupportTicket> selected = new ArrayList<>();
+        while (selected.size() < maxTickets && !waiting.isEmpty()) {
+            selected.add(waiting.poll());
+        }
         dispatched.addAll(selected);
-        return selected;
+        return List.copyOf(selected);
     }
 
     public List<SupportTicket> dispatchedTickets() {
