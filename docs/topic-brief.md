@@ -33,7 +33,7 @@
 | 最終観測 | 配信済み履歴が`[urgent, soon]`であり、待機キューが`[normal]`であることを別々に検証する。 |
 | 決定性 | 時刻、乱数、並行実行、`sleep`、外部I/Oを使わず、固定の優先度とインメモリ状態だけを使う。 |
 | 固定状態の検証コマンド | `mvn --batch-mode clean test` |
-| バグ状態の確認コマンド | `git checkout <bug-commit>`後に`mvn --batch-mode test -Dtest=TicketDispatchServiceTest` |
+| バグ状態の確認コマンド | `git checkout ee5d595`後に`mvn --batch-mode test -Dtest=TicketDispatchServiceTest` |
 
 ## 仮説
 
